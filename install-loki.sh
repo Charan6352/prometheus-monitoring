@@ -12,7 +12,16 @@ sudo mv loki-linux-amd64 /usr/local/bin/loki
 # Copy loki.service to /etc/systemd/system/
 sudo cp loki.service /etc/systemd/system/loki.service
 
+# Reload systemd daemon
+sudo systemctl daemon-reload
+
+# Start Loki service
+sudo systemctl start loki
+
+# Enable Loki service to start on boot
+sudo systemctl enable loki
+
 # Inform the user
-echo "Loki binary installed, and service file copied to /etc/systemd/system/. Please configure the loki.service file as needed."
+echo "Loki binary installed, service file copied, and service started successfully. Loki is now enabled to start at boot."
 
 
