@@ -1,0 +1,12 @@
+[Unit]
+Description=Loki Service
+After=network.target
+
+[Service]
+User=loki
+ExecStart=/usr/local/bin/loki -config.file=/etc/loki/loki-config.yaml
+Restart=always
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
